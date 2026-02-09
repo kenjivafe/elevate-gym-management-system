@@ -5,6 +5,7 @@ import {
   BadgeCheck,
   CreditCard,
   GaugeCircle,
+  KeyRound,
   LayoutDashboard,
   Palette,
   Settings,
@@ -21,11 +22,13 @@ type NavItem = {
 const dashboardRoute = "/dashboard" as Route;
 const membersRoute = "/dashboard/members" as Route;
 const employeesRoute = "/dashboard/employees" as Route;
+const lockersRoute = "/dashboard/lockers" as Route;
 
 const navItems: NavItem[] = [
   { label: "Dashboard", icon: LayoutDashboard, href: dashboardRoute },
   { label: "Members", icon: Users, href: membersRoute },
   { label: "Employees", icon: UserCog, href: employeesRoute },
+  { label: "Lockers", icon: KeyRound, href: lockersRoute },
   { label: "Card Designer", icon: CreditCard },
   { label: "Attendance", icon: GaugeCircle },
   { label: "Brand Studio", icon: Palette },

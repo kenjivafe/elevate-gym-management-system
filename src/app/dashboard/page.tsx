@@ -3,9 +3,8 @@ import Link from "next/link";
 
 import { AppShell } from "@/components/layout/app-shell";
 import { KpiGrid } from "@/components/dashboard/kpi-grid";
-import { QuickActions } from "@/components/dashboard/quick-actions";
+import { AnalyticsSection } from "@/components/dashboard/analytics-section";
 import { ActivityTimeline } from "@/components/dashboard/activity-timeline";
-import { CardDesigner } from "@/components/card-designer/card-designer";
 
 export const metadata = {
   title: "Dashboard Preview | Elevate",
@@ -16,6 +15,7 @@ export default function DashboardPage() {
   const registerPath = "/register" as Route;
   const membersPath = "/dashboard/members" as Route;
   const employeesPath = "/dashboard/employees" as Route;
+  const lockersPath = "/dashboard/lockers" as Route;
   return (
     <AppShell>
       <header className="space-y-2">
@@ -44,6 +44,12 @@ export default function DashboardPage() {
           >
             Monitor employees attendance
           </Link>
+          <Link
+            href={lockersPath}
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/15"
+          >
+            Track locker occupancy
+          </Link>
         </div>
       </header>
 
@@ -51,12 +57,11 @@ export default function DashboardPage() {
         <KpiGrid />
       </section>
 
+      <AnalyticsSection />
+
       <section className="grid gap-6 xl:grid-cols-[2fr_1fr]">
-        <QuickActions />
         <ActivityTimeline />
       </section>
-
-      <CardDesigner />
     </AppShell>
   );
 }
